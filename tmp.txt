@@ -1,0 +1,6 @@
+git init
+git checkout --orphan gh-pages # 创建一个没有父节点的分支gh-pages
+git add .
+git commit -m "demo first" # 提交本地
+
+git remote add origin git@github.com:co6co/doc.git # 提交到远程

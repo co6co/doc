@@ -4,3 +4,4 @@ git add .
 git commit -m "demo first" # 提交本地
 
 git remote add origin git@github.com:co6co/doc.git # 提交到远程
+git push origin gh-pages

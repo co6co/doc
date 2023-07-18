@@ -1,6 +1,6 @@
 ---
 layout: post
-title: typing 模块和类型注解
+title: typing模块和类型注解
 subtitle: 
 description: 在 Python 3.5 中，Python PEP 484 引入了类型注解（type hints），在 Python 3.6 中，PEP 526 又进一步引入了变量注解（Variable Annotations）
 header-img: {{site.img}}/post-bg-ios9-web.jpg

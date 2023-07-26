@@ -33,7 +33,7 @@ gpg --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
 ```
 
 ```
-apt-key list #查看存在的Key
+apt-key list #查看存在的Key 
 ```
 ### 1.2.2 无法安全地用该源进行更新，所以默认禁用该源
 ```
@@ -76,3 +76,47 @@ deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 #deb http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib
 #deb-src http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib
 ```
+=======
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs

@@ -22,4 +22,6 @@ pyinstaller -n myapp test.py 指定生成的exe文件名
 
 pyinstaller --onefile test.py #默认情况下，pyinstaller生成的exe文件是一个可执行文件和一些相关文件的集合，需要将它们一起放在同一目录下才能运行。
 								#如果需要生成一个单独的exe文件，可以使用--onefile选项
+
+pyinstaller --onefile test.py -p modelPath #如果存在本地模块使用参数  -p 增加文件夹
 ```

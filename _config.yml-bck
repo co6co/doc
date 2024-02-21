@@ -1,0 +1,9 @@
+# site 变量
+host: ""
+future: true
+baseurl: /doc
+title: blog
+keywords: 技术,安全
+description: 论坛
+verification_key: google-site-verification #基于meta的 验证，过了可删除
+verification_value: xxxxxxxxxxxxxxxxxx  

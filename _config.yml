@@ -1,5 +1,5 @@
 # Setup
-title: 新的世纪
+title: 七千气清
 url: https://blog.co6co.top
 paginate: 1
 baseurl: ""
@@ -43,8 +43,8 @@ version: 3.0.0
 
 # Navbar page list
 nav:
-  - title: Blog
+  - title: 杂解
     url: /archive
 
-  - title: About
+  - title: ME
     url: /about

@@ -4,6 +4,8 @@ url: https://blog.co6co.top
 paginate: 1
 baseurl: ""
 permalink: pretty
+future: true
+
 
 # Gems
 plugins:

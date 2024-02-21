@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # Setup
 title: Dark Poole
-url: https://getpoole.com
+url: https://blog.co6co.top
 paginate: 1
 baseurl: ""
 permalink: pretty
@@ -33,9 +32,9 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Mark Otto
-  url: https://twitter.com/mdo
-  email: markdotto@gmail.com
+  name: co6co
+  url: https://blog.co6co.top
+  email: co6co@xx.com
 
 # Custom vars
 version: 3.0.0
@@ -47,14 +46,3 @@ nav:
 
   - title: About
     url: /about
-=======
-# site 变量
-host: ""
-future: true
-baseurl: /
-title: blog
-keywords: 技术,安全
-description: 论坛
-verification_key: google-site-verification #基于meta的 验证，过了可删除
-verification_value: xxxxxxxxxxxxxxxxxx  
->>>>>>> c304956a2992bb6cabcb752f5f010c9569124f1e

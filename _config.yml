@@ -1,7 +1,7 @@
 # site 变量
 host: ""
 future: true
-baseurl: /doc
+baseurl: /
 title: blog
 keywords: 技术,安全
 description: 论坛

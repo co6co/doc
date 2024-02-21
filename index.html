@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+previous_text: 后退
+next_text: 前进
 ---
 
 <div class="posts">
@@ -21,13 +23,13 @@ title: Home
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">Older</a>
+    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">{{page.previous_text}}</a></a></a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+    <span class="pagination-item older">{{page.previous_text}}</span>
   {% endif %}
   {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: relative_url }}">Newer</a>
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: relative_url }}">{{page.next_text}}</a>
   {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <span class="pagination-item newer">{{page.next_text}}</span>
   {% endif %}
 </div>

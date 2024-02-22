@@ -45,6 +45,8 @@ version: 3.0.0
 nav:
   - title: 杂解
     url: /archive
+  - title: q
+    url: /aq
 
   - title: ME
     url: /about

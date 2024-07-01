@@ -14,3 +14,29 @@ ypeScript 2.0 常手动编写，使用定义文件（.d.ts）来为第三方库�
 
 # 2. vscode
 保存`Files: Insert Final Newline` 最后一行回车
+
+# 2. vite alias
+```
+//vite.config
+import { resolve } from 'path'; // 主要用于alias文件路径别名  pnpm install -D path
+export default defineConfig({
+	resolve: {
+		alias: {
+			'@': resolve(__dirname, 'src')//npm install --save-dev @types/node
+		}, 
+	},
+})
+
+//tsconfig.json
+{
+	"compilerOptions": {
+		...
+		"baseUrl": "./",
+			"paths": {
+				"@/*": ["src/*"]
+			}
+		...
+	}
+	...
+}
+```

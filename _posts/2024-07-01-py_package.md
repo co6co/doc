@@ -17,7 +17,7 @@ pip install virtualenvwrapper-win # 扩展包（指令便捷）
 #
  
 virtualenv [虚拟环境名称] 
-virtualenv venv
+virtualenv venv --python=pythonx.x.x
 virtualenv venv --system-site-packages # 包含主环境包
 
 #如果不想使用系统的包,加上–no-site-packeages参数

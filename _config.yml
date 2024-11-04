@@ -45,8 +45,22 @@ version: 3.0.0
 nav:
   - title: 杂解
     url: /archive
-  - title: q
+  - title: 安全相关
     url: /aq
 
   - title: ME
     url: /about
+# 帖子
+collections:
+  new:
+    output: true # Jekyll 会为集合中的每个文档生成一个单独的页面
+    permalink: /tip/:path/
+  aq:
+    output: true
+    permalink: /aq/:path/
+  test:
+    output: true
+    permalink: /test/:path/
+
+
+

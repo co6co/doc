@@ -23,7 +23,7 @@ next_text: 前进
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">{{page.previous_text}}</a></a></a>
+    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">{{page.previous_text}}</a>
   {% else %}
     <span class="pagination-item older">{{page.previous_text}}</span>
   {% endif %}

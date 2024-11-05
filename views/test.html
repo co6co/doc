@@ -1,0 +1,39 @@
+---
+layout: default
+title: TEST
+previous_text: 后退
+next_text: 前进
+categories: [技术, 教程]
+tags: [Jekyll, 博客]
+---
+<h1>测试主页</h1>
+<ol>
+  <li> 编译时间：{{site.time}}</li>
+  <li> 当前URL:  {{page.url}}</li>
+  
+  {%for item in post.categories%}
+  <li>类别：{{item}}</li>
+  {%endfor%}
+  <li{{post.categories}}></li>
+  <li>baseurl:{{site.baseurl}}</li>
+  
+</ol>
+<p>Categories: 
+  {% for category in post.categories %}
+    <span>{{ category }}</span>
+  {% endfor %}
+</p> 
+ 
+  
+<div class="posts"> 
+    {% for post in site.test %}
+    <article class="post">
+      <h1 class="post-title">
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title}}  
+        </a>
+      </h1> 
+      <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time> 
+    </article>
+    {% endfor %}
+  </div>

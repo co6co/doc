@@ -1,11 +1,13 @@
 ---
 layout: post
 title:  typescript 问题总结
-subtitle: 摘录
-description: 常见的思维方式
+subtitle: 
+description: 
 
 header-img: 
 date:       2024-06-12 14:51:01
+categories: [TypeScript,npm ]
+tags: [基础, ]
 ---
 
 # 1. typings 文件夹

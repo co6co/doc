@@ -2,6 +2,8 @@
 layout: post
 title: KALI Linux 升级
 date:       2023-7-25 15:02:01
+categories: [技术,linux]
+tags: [升级,linux,kali]
 ---
 
 # 1. Linux升级

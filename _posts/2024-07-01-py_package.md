@@ -6,6 +6,8 @@ description: python
 
 header-img: 
 date:       2024-07-01 15:12:01
+categories: [python]
+tags: [虚拟环境,发布包]
 ---
 # 安装虚环境
 ## 1. virtualenv

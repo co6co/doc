@@ -43,18 +43,26 @@ version: 3.0.0
 
 # Navbar page list
 nav:
-  - title: 杂解
-    url: /archive
+  - title: Blog
+    url: /views/article
+  - title: 分类
+    url: /views/categories
+  - title: 标签
+    url: /views/tags
   - title: 安全相关
-    url: /aq
-
-  - title: ME
-    url: /about
+    url: /views/aq
+  - title: 测试
+    url: /views/test
+  - title: 关于
+    url: /views/about
 # 帖子
 collections:
   new:
     output: true # Jekyll 会为集合中的每个文档生成一个单独的页面
     permalink: /tip/:path/
+  article:
+    output: true # Jekyll 会为集合中的每个文档生成一个单独的页面
+    permalink: /article/:path/ 
   aq:
     output: true
     permalink: /aq/:path/

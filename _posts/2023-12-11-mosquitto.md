@@ -5,6 +5,8 @@ subtitle:
 description: 
 header-img: 
 date: 2023-12-11 9:17:01
+categories: [工具]
+tags: [mosquitto]
 ---
 
 # mosquitto:

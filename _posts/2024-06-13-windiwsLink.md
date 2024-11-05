@@ -6,6 +6,8 @@ description: 创建符号链接
 
 header-img: 
 date:       2024-06-13 14:19:01
+categories: [windows]
+tags: [符号链接]
 ---
 # 1. MKLINK 
 ```

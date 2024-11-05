@@ -2,6 +2,8 @@
 layout: post
 title: PYthon进程线程
 date:       2023-7-27 15:02:01
+categories: [python]
+tags: [进程,线程]
 ---
 
 # 1. 进程

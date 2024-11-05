@@ -1,6 +1,8 @@
 ---
 layout: default
 title: python.py 转exe
+categories: [工具]
+tags: [python,打包,转exe]
 ---
 
 # 1. 安装模块

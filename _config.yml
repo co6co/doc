@@ -53,6 +53,8 @@ nav:
     url: /views/aq
   - title: 测试
     url: /views/test
+  - title: old
+    url: /views/old
   - title: 关于
     url: /views/about
 # 帖子
@@ -64,6 +66,9 @@ collections:
     output: true # Jekyll 会为集合中的每个文档生成一个单独的页面
     permalink: /article/:path/ 
   aq:
+    output: true
+    permalink: /aq/:path/
+  old:
     output: true
     permalink: /aq/:path/
   test:

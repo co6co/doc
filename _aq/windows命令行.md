@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Json Web Token
-permalink: jwt.html
+title: Windows 命令行
+permalink: cmd.html
 categories: [技术, 安全]
 tags: [命令行, copy]
 date: 2024-11-13 14:26:01

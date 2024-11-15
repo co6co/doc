@@ -1,10 +1,13 @@
 # Setup
 title: 七千气清
 url: https://blog.co6co.top
-paginate: 1
+paginate: 10 # 每页显示的文章数 
+paginate_path: "/page:num/" # 分页链接格式
 baseurl: ""
 permalink: pretty
 future: true
+keywords: 技术,安全,工具,经验,博客
+description: 一片数字星空，点缀着无数闪亮的思想火花，照亮前行的道路。
 
 
 # Gems

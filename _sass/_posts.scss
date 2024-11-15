@@ -79,3 +79,11 @@ div.inline{
     }
   }
 }
+
+
+.post-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 设置显示的行数为2 */
+  -webkit-box-orient: vertical;  
+  overflow: hidden; /* 隐藏超出的内容 */
+}

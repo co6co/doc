@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Windows 命令行
-permalink: cmd.html
-categories: [技术, 安全]
+title: keytool工具
+permalink: keytool.html
+categories: [技术, 安全,工具]
 tags: [https证书,java,keytool]
 date: 2024-11-18 16:26:01
 ---
@@ -53,6 +53,7 @@ keytool -delete -alias 指定需删除的别名  -keystore 指定keystore  -stor
 # 3. 常用操作
 ## 3.1 keystore的生成证书
 ```
+//Invalid keystore format //注意 keytool.exe 所属的java版本
 keytool -genkey -alias 别名 -keypass 密码 -keyalg RSA -keysize 1024 -validity 365 -keystore D:\server.jks -storepass 123456
 keytool -genkey -alias 别名 -keypass 密码 -keyalg RSA -keysize 1024 -validity 365 -keystore D:\server.jks -storepass 123456 -dname "CN=(名字与姓氏), OU=(组织单位名称), O=(组织名称), L=(城市或区域名称), ST=(州或省份名称), C=(单位的两字母国家代码)";
 ```

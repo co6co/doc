@@ -82,6 +82,8 @@ GEM
       faraday (>= 0.17.3, < 3)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
     uri (0.13.1)
     webrick (1.9.0)
@@ -94,6 +96,7 @@ DEPENDENCIES
   jekyll-gist
   jekyll-paginate
   jekyll-seo-tag
+  tzinfo
 
 BUNDLED WITH
    2.5.22

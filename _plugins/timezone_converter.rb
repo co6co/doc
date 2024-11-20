@@ -3,8 +3,15 @@ require 'tzinfo'
 module Jekyll
   module TimezoneConverter
     def convert_to_timezone(time, timezone)
-      tz = TZInfo::Timezone.get(timezone)
-      tz.utc_to_local(time.utc)
+      begin
+        tz = TZInfo::Timezone.get(timezone)
+        tz.utc_to_local(time.utc)
+      rescue StandardError => e
+        puts "标准错误: #{e.message}" 
+      ensure 
+        puts time
+      end
+     
     end
   end
 end

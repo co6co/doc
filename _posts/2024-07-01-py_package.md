@@ -6,8 +6,8 @@ description: python
 
 header-img: 
 date:       2024-07-01 15:12:01
-categories: [python]
-tags: [虚拟环境,发布包]
+categories: [python,npm]
+tags: [虚拟环境,发布包,conda,workon,virtualenv]
 ---
 # 安装虚环境
 ## 1. virtualenv
@@ -40,12 +40,14 @@ pip install -r requirements.txt
 
 ```
 ## 2. conda
+```
 conda create --name env_name python=3.11
 conda env list
 conda activate env_name
 conda deactivate
 
 conda list # 包管理
+```
 ### 2.1 查看Python 所在路径
 where python #windows
 which python # linux or macOS

@@ -1,3 +1,6 @@
+#scheme: Muse #默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+scheme: Mist #紧凑版本，整洁有序的单栏外观
+#scheme: Pisces #双栏 Scheme，小家碧玉似的清新
 # Setup
 title: 七千气清
 url: https://blog.co6co.top
@@ -10,11 +13,15 @@ keywords: 技术,安全,工具,经验,博客
 description: 一片数字星空，点缀着无数闪亮的思想火花，照亮前行的道路。
 
 
+
 # Gems
+#gems: [jekyll-coffeescript, jekyll-watch, jekyll-assets]
+verbose: true # 创建加载顺序
 plugins:
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-seo-tag
+  - jekyll-seo-tag 
+  - multi_posts
 
 # Optimize Jekyll
 exclude:

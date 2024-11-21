@@ -21,6 +21,8 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-seo-tag
+  - timezone_converter
+  - multi_posts
 
 # Optimize Jekyll
 exclude:

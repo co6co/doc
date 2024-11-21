@@ -7,11 +7,8 @@ module Jekyll
         tz = TZInfo::Timezone.get(timezone)
         tz.utc_to_local(time.utc)
       rescue StandardError => e
-        puts "标准错误: #{e.message}" 
-      ensure 
-        puts time
-      end
-     
+        puts "TimezoneConverter Error: #{e.message}"  
+      end 
     end
   end
 end

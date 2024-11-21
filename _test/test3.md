@@ -7,3 +7,11 @@ tags: [Jekyll, 博客]
 ---
 
 这是我的第一篇博客文章。
+
+<ul>
+{% for item in site.categories %}
+    <li>
+    <small>{{item[0]}}</small> 
+    </li>
+{% endfor %}
+</ul>

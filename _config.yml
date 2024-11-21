@@ -20,9 +20,7 @@ verbose: true # 创建加载顺序
 plugins:
   - jekyll-gist
   - jekyll-paginate
-  - jekyll-seo-tag 
-  #- multi_posts
-  #- timezone_converter
+  - jekyll-seo-tag
 
 # Optimize Jekyll
 exclude:
@@ -81,7 +79,7 @@ collections:
     permalink: /aq/:path/
   old:
     output: true
-    permalink: /aq/:path/
+    permalink: /old/:path/
   test:
     output: true
     permalink: /test/:path/

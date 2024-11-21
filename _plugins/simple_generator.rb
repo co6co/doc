@@ -1,7 +1,6 @@
 module Jekyll
     class SimpleGenerator < Generator
-      safe true
-  
+      safe true 
       def generate(site)
         puts "SimpleGenerator is running!"
       end

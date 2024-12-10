@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  python 上传包
-subtitle: python 虚拟环境
-description: python
-
+title:  python包上传包
+subtitle: python 虚拟环境、包上传
+description: python 创建虚拟环境，将包上传到 pypi
 header-img: 
 date:       2024-07-01 15:12:01
-categories: [python,npm]
+categories: [python]
 tags: [虚拟环境,发布包,conda,workon,virtualenv]
 ---
 # 安装虚环境

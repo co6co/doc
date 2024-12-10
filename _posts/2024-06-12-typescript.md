@@ -6,8 +6,8 @@ description:
 
 header-img: 
 date:       2024-06-12 14:51:01
-categories: [TypeScript,npm ]
-tags: [基础, ]
+categories: [npm,前端]
+tags: [基础,TypeScript]
 ---
 
 # 1. typings 文件夹

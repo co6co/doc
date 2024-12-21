@@ -5,6 +5,7 @@ subtitle: python 虚拟环境、包上传
 description: python 创建虚拟环境，将包上传到 pypi
 header-img: 
 date:       2024-07-01 15:12:01
+update:     2024-12-21 20:16:01
 categories: [python]
 tags: [虚拟环境,发布包,conda,workon,virtualenv]
 ---
@@ -14,7 +15,7 @@ tags: [虚拟环境,发布包,conda,workon,virtualenv]
 // 创建的虚拟环境的存放的路径 C:\Users\Administrator\Envs
 
 pip install virtualenv
-pip install virtualenvwrapper-win # 扩展包（指令便捷）
+pip install virtualenvwrapper-win # 扩展包（指令便捷） 也会安装virtualenv， workon 命令
 #
  
 virtualenv [虚拟环境名称] 
@@ -122,3 +123,6 @@ poetry source add --priority=default mirrors https://pypi.tuna.tsinghua.edu.cn/s
 #通过以下命令设置次级镜像：
 poetry source add --priority=secondary mirrors https://pypi.tuna.tsinghua.edu.cn/simple/ 
 ```
+
+# vscode使用 
+`Ctrl+shift+P` 或者 `F1` 打开命令面板 选择 `Python:select Interpreter`

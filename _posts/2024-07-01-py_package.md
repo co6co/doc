@@ -124,5 +124,19 @@ poetry source add --priority=default mirrors https://pypi.tuna.tsinghua.edu.cn/s
 poetry source add --priority=secondary mirrors https://pypi.tuna.tsinghua.edu.cn/simple/ 
 ```
 
+## 5 包更新
+pip install --upgrade --no-deps co6co --index-url https://pypi.org/simple/
+
+## 6. 清除所有包
+```
+//sh 
+pip freeze | xargs pip uninstall -y
+
+/win
+for /f "tokens=*" %i in ('pip freeze') do pip uninstall -y %i
+pip freeze | ForEach-Object { pip uninstall -y $_ }
+
+
+```
 # vscode使用 
 `Ctrl+shift+P` 或者 `F1` 打开命令面板 选择 `Python:select Interpreter`

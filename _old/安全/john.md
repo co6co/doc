@@ -8,7 +8,8 @@ tags: [安全,john]
 ---
 
 
- 
+# 简介
+[John The Ripper](https://www.openwall.com/john/)
 # 命令
 ```
 $ echo -n "password" | md5sum

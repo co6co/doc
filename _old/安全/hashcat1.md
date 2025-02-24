@@ -29,7 +29,7 @@ hashcat64.exe -b //查出是否能用GPU
 -a, –attack-mode=NUM 攻击模式，其值参考后面对参数。“-a 0”字典攻击，“-a 1” 组合攻击；“-a 3”掩码攻击。
 -V, —version 版本信息
 -h, –help 帮助信息。
-–quiet 安静的模式, 抑制输出
+–quit 安静的模式, 抑制输出
 ```
 # 文件
 ```

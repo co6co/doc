@@ -6,7 +6,7 @@ date:       2023-07-18 14:35:34
 categories: [安全]
 tags: [安全,hashcat]
 ---
-#　1.　hashcat简介 
+# 1.　hashcat简介 
 按s键查看破解进度，`p`键暂停，`r`键继续破解，`q`键退出破解
 ## 1.1 hashcat常用命令
 ```

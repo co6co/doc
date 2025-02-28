@@ -1,7 +1,7 @@
 ---
 layout: default
 title: python.py 转exe
-categories: [工具]
+categories: [工具,python]
 tags: [python,打包,转exe]
 ---
 

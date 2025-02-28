@@ -1,7 +1,7 @@
 ---
 layout: post
 title: windows 端口转发
-categories: [技术, 安全]
+categories: [技术, 安全,windows]
 tags: [ portproxy,netsh]
 date: 2024-12-10 16:26:01
 ---

@@ -6,7 +6,7 @@ description:
 
 header-img: 
 date:       2024-06-12 14:51:01
-categories: [npm,前端]
+categories: [前端]
 tags: [基础,TypeScript]
 ---
 

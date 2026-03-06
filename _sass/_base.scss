@@ -27,11 +27,7 @@ body {
 		background-attachment: fixed;
 
 		/* 将背景图定位在中心 */
-		background-position: center;
-
-		/* 可选：确保背景颜色在图片加载前或未覆盖区域显示 */
-		background-color: #f0f0f0;
-
+		background-position: center; 
 		/* 可选：防止背景图重复（在cover模式下通常不需要，但更稳妥） */
 		background-repeat: no-repeat;
 

@@ -66,6 +66,8 @@ nav:
     url: /views/old
   - title: 关于
     url: /views/about
+  - title: 工具
+    url: /views/tools
 # 帖子
 collections:
   new:

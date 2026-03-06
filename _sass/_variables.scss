@@ -39,17 +39,15 @@
   --body-bg: #fff;
 
   --link-color: var(--gray-900);
-  --link-hover-color: #1c7ed6;
-
-  --heading-color: var(--gray-900);
-
+  --link-hover-color: #1c7ed6; 
+  --heading-color: var(--gray-900); 
   --border-color: var(--gray-300);
   --border-radius: 0.25rem;
 
   --code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
   --code-color: var(--grape);
-  --code-bg: var(--gray-000);
+  --code-bg: rgb(34, 38, 42,0.7);
 
   --spacer: 1rem;
   --spacer-2: calc(var(--spacer) * 1.5);

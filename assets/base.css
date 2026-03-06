@@ -1,0 +1,29 @@
+:root {
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		/* 设置背景图片的URL，此处为示例，请替换为您的图片地址 */
+		background-image: url('https://picsum.photos/1920/1080');
+
+		/* 关键：让背景图覆盖整个区域，并保持比例 */
+		background-size: cover;
+
+		/* 关键：固定背景，不随内容滚动 */
+		background-attachment: fixed;
+
+		/* 将背景图定位在中心 */
+		background-position: center;
+
+		/* 可选：确保背景颜色在图片加载前或未覆盖区域显示 */
+		background-color: #f0f0f0;
+
+		/* 可选：防止背景图重复（在cover模式下通常不需要，但更稳妥） */
+		background-repeat: no-repeat;
+
+		/* 确保body元素本身占据整个视口高度 */
+		min-height: 100vh;
+		margin: 0;
+	}
+}

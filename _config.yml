@@ -4,15 +4,13 @@ scheme: Mist #紧凑版本，整洁有序的单栏外观
 # Setup
 title: 七千气清
 url: https://blog.co6co.top
-paginate: 10 # 每页显示的文章数 
-paginate_path: "/page:num/" # 分页链接格式
-baseurl: ""
+paginate: 10 # 每页显示的文章数
+paginate_path: '/page:num/' # 分页链接格式
+baseurl: ''
 permalink: pretty
 future: true
 keywords: 技术,安全,工具,经验,博客
 description: 一片数字星空，点缀着无数闪亮的思想火花，照亮前行的道路。
-
-
 
 # Gems
 #gems: [jekyll-coffeescript, jekyll-watch, jekyll-assets]
@@ -41,7 +39,7 @@ sass:
 # Options
 
 # Replace this value and uncomment to enable Google Analytics tracking
-ga_analytics: G-RKYV8PL5RB
+#ga_analytics: G-RKYV8PL5RB
 
 # Specify the author for blog posts
 author:
@@ -75,7 +73,7 @@ collections:
     permalink: /tip/:path/
   article:
     output: true # Jekyll 会为集合中的每个文档生成一个单独的页面
-    permalink: /article/:path/ 
+    permalink: /article/:path/
   aq:
     output: true
     permalink: /aq/:path/
@@ -85,6 +83,3 @@ collections:
   test:
     output: true
     permalink: /test/:path/
-
-
-

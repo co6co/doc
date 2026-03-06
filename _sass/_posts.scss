@@ -5,13 +5,25 @@
 
 .page,
 .post {
-  margin-bottom: 4em;
-
+  margin-bottom: 4em; 
   li + li {
     margin-top: .25rem;
   }
 }
 
+.page {
+  ul.categories{
+    list-style: none;
+    li{
+      strong{font-weight: bold;} 
+      ul{
+        list-style: none;
+        li{}
+      }
+    }
+   
+  }
+}
 // Blog post or page title
 .page-title,
 .post-title {

@@ -54,6 +54,8 @@
   --spacer: 1rem;
   --spacer-2: calc(var(--spacer) * 1.5);
   --spacer-3: calc(var(--spacer) * 3);
+
+  --opacity:0.8
 }
 
 @media (prefers-color-scheme: dark) {

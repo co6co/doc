@@ -10,16 +10,11 @@
 		{% if page.custom_css %} {% for css in page.custom_css %}
 		<link rel="stylesheet" href="{{ css | relative_url }}" />
 		{% endfor %} {% endif %}
-
-		<!-- Element Plus CSS -->
-		<link
-			rel="stylesheet"
-			href="https://unpkg.com/element-plus/dist/index.css" />
 	</head>
 	<body>
 		{{ content }}
 		<!--js-->
-		<script src="{{/assets/js/layout.js}}"></script>
+		<script src="{{/assets/js/layout.js | relative_url}}"></script>
 		{% if page.custom_js%} {%for js in page.custom_js%}
 		<script src="{{ js | relative_url }}"></script>
 		{% endfor %} {% endif %}

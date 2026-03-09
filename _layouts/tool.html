@@ -13,6 +13,8 @@
 		{% endfor %} {% endif %}
 	</head>
 	<body>
+		{{ content }}
+		<!--js-->
 		{% if page.custom_js%} {%for js in page.custom_js%}
 		<script src="{{ js | relative_url }}"></script>
 		{% endfor %} {% endif %}

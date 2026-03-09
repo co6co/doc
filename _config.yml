@@ -61,7 +61,7 @@ nav:
   - title: 安全相关
     url: /views/aq
   - title: 工具
-    url: /views/tools
+    url: /pages/index
   - title: old
     url: /views/old
   - title: 测试

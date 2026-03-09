@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ page.title }} | {{ site.title }}</title>
+		<meta name="description" content="{{ page.description }}" />
+		<!-- 引用全局样式和页面特定样式 -->
+		<link rel="stylesheet" href="{{ '/assets/css/page.css' | relative_url }}" />
+		<!-- 遍历 custom_css 数组 -->
+		{% if page.custom_css %} {% for css in page.custom_css %}
+		<link rel="stylesheet" href="{{ css | relative_url }}" />
+		{% endfor %} {% endif %}
+	</head>
+	<body>
+		{% if page.custom_js%} {%for js in page.custom_js%}
+		<script src="{{ js | relative_url }}"></script>
+		{% endfor %} {% endif %}
+	</body>
+</html>

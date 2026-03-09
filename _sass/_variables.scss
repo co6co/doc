@@ -39,8 +39,6 @@
   --body-bg: rgba( var(--gray-100),0.8); ;
 
   --container-bg:rgba(255,255,255,0.8);
-
-
   --link-color: var(--gray-900);
   --link-hover-color: #1c7ed6; 
   --heading-color: var(--gray-900); 
@@ -50,27 +48,22 @@
   --code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
   --code-color: var(--grape);
-  --code-bg:rgba(0,0,0,0.2); 
+  --code-bg:rgba(111,111,111,0.2);  
 
   --spacer: 1rem;
   --spacer-2: calc(var(--spacer) * 1.5);
-  --spacer-3: calc(var(--spacer) * 3);
-
+  --spacer-3: calc(var(--spacer) * 3); 
   --opacity:0.8
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --body-color: var(--gray-300);
-    --body-bg: var(--gray-800);
-
-    --heading-color: #fff;
-
+    --body-bg: var(--gray-800); 
+    --heading-color: #fff; 
     --link-color: var(--blue-300);
-    --link-hover-color: var(--blue-400);
-
-    --border-color: rgba(255, 255, 255, 0.15);
-
+    --link-hover-color: var(--blue-400); 
+    --border-color: rgba(255, 255, 255, 0.15); 
     --code-bg: var(--gray-900);
   }
 }

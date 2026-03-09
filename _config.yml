@@ -1,6 +1,6 @@
-#scheme: Muse #默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白
+#scheme: Muse #默认 Scheme,这是 NexT 最初的版本，黑白主调，大量留白
 scheme: Mist #紧凑版本，整洁有序的单栏外观
-#scheme: Pisces #双栏 Scheme，小家碧玉似的清新
+#scheme: Pisces #双栏 Scheme,小家碧玉似的清新
 # Setup
 title: 七千气清
 url: https://blog.co6co.top

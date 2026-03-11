@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  Sanic框架
+title: Rocket.Chat
 
-header-img: 
-date:   2025-03-26 10:15:01
+header-img:
+date: 2025-03-26 10:15:01
 modify: 2025-03-26 10:15:01
-categories: [开发,python]
-tags: [sanic ]
+categories: [工具, Rocket.Chat]
+tags: [sanic]
 ---
 
 # 1. 环境准备
+
 ```
 # 启用EPEL存储库
 sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -30,6 +31,7 @@ sudo dnf install -y yarn
 ```
 
 # 2. 安装并配置 MongoDB 6.0
+
 ```
 # 添加MongoDB官方源
 sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo <<EOF
@@ -53,6 +55,7 @@ sudo systemctl status mongod
 ```
 
 # 3.下载并安装 Rocket.Chat
+
 ```
 # 创建Rocket.Chat目录
 sudo mkdir -p /opt/Rocket.Chat
@@ -78,6 +81,7 @@ source ~/.bashrc
 ```
 
 # 4. 创建系统服务
+
 ```
 # 创建服务文件
 sudo tee /etc/systemd/system/rocketchat.service <<EOF
@@ -116,6 +120,7 @@ sudo systemctl status rocketchat
 ```
 
 # 5.配置防火墙
+
 ```
 # 开放Rocket.Chat端口
 sudo firewall-cmd --permanent --add-port=3000/tcp
@@ -128,6 +133,7 @@ sudo firewall-cmd --reload
 ```
 
 # 6. 配置反向代理（可选）
+
 ```
 # 安装Nginx
 sudo dnf install -y nginx
@@ -165,13 +171,19 @@ sudo certbot --nginx -d yourdomain.com
 
 # 调试
 ```
+
 # 停止自动重启的服务
+
 sudo systemctl stop rocketchat
 
 # 以调试模式运行（前台输出日志）
+
 cd /opt/Rocket.Chat/bundle
 MONGO_URL=mongodb://localhost:27017/rocketchat \
 ROOT_URL=http://localhost:3000 \
 PORT=3000 \
 node main.js
+
+```
+
 ```

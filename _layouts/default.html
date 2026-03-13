@@ -7,14 +7,16 @@
 		<div class="container content">
 			<header class="masthead">
 				<div class="masthead-title">
-					<a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-					<em class="subTitle"
-						>{{ site.description }}
-						<small>
-							{{ site.time | convert_to_timezone: "Asia/Shanghai"| date:
-							"%Y-%m-%d %H:%M:%S %Z"}}</small
-						>
-					</em>
+					<div class="left">
+						<a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
+						<em class="subTitle"
+							>{{ site.description }}
+							<small>
+								{{ site.time | convert_to_timezone: "Asia/Shanghai"| date:
+								"%Y-%m-%d %H:%M:%S %Z"}}</small
+							>
+						</em>
+					</div>
 					<nav class="nav">
 						{% for nav in site.nav %}
 						<small><a href="{{ nav.url }}">{{ nav.title }}</a></small>

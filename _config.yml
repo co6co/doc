@@ -2,7 +2,7 @@
 scheme: Mist #紧凑版本，整洁有序的单栏外观
 #scheme: Pisces #双栏 Scheme,小家碧玉似的清新
 # Setup
-title: 七千气清
+title: 七仟炁清
 url: https://blog.co6co.top
 paginate: 10 # 每页显示的文章数
 paginate_path: '/page:num/' # 分页链接格式

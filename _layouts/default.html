@@ -11,10 +11,7 @@
 						<a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
 						<em class="subTitle"
 							>{{ site.description }}
-							<small>
-								{{ site.time | convert_to_timezone: "Asia/Shanghai"| date:
-								"%Y-%m-%d %H:%M:%S %Z"}}</small
-							>
+							<small> {{ site.time | date: "%Y-%m-%d %H:%M:%S %Z"}} </small>
 						</em>
 					</div>
 					<nav class="nav">

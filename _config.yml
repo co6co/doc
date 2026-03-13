@@ -1,5 +1,6 @@
 #scheme: Muse #默认 Scheme,这是 NexT 最初的版本，黑白主调，大量留白
 scheme: Mist #紧凑版本，整洁有序的单栏外观
+timezone: Asia/Shanghai
 #scheme: Pisces #双栏 Scheme,小家碧玉似的清新
 # Setup
 title: 七仟炁清
@@ -15,6 +16,7 @@ description: 一片数字星空，点缀着无数闪亮的思想火花，照亮�
 # Gems
 #gems: [jekyll-coffeescript, jekyll-watch, jekyll-assets]
 verbose: true # 创建加载顺序
+
 plugins:
   - jekyll-gist
   - jekyll-paginate

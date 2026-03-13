@@ -58,14 +58,14 @@ nav:
     url: /views/categories
   - title: 标签
     url: /views/tags
-  - title: 安全相关
+  - title: 安全日记
     url: /views/aq
-  - title: 工具
+  - title: 筱筱工具
     url: /pages/index
-  - title: old
+  - title: 时光长河
     url: /views/old
-  - title: 测试
-    url: /views/test
+  #- title: 测试
+  #  url: /views/test
   - title: 关于
     url: /views/about
 

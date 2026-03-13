@@ -1,14 +1,60 @@
 // Masthead
 //
 // Super small header above the content for site name and short description.
+/*btn 边框*/
+
+   .borderRotate {
+       --bg-color:rgba(217, 76, 76, 0.9);
+       --border-color: hsl(250, 84%, 42%);  
+       background-color: var(--bg-color);
+       border: none;
+       outline: none;
+       z-index: 1;
+       border-radius: 10px;
+       cursor: pointer;
+       /*outline: 4px solid #fff;*/
+       position: relative;
+       overflow: hidden;
+   }
+ .borderRotate::before {
+       content: '';
+       position: absolute;
+       width: 200%;
+       height: 200%;
+       background-color: var(--border-color);
+       z-index: -2;
+       left: 50%;
+       top: 50%;
+       transform-origin: left top;
+       animation: borderRotate 2s linear infinite;
+   }
+
+   @keyframes borderRotate {
+       to {
+           transform: rotate(1turn);
+       }
+   }
+
+   .borderRotate::after {
+       content: '';
+       position: absolute;
+       --w: 4px;
+       width: calc(100% - 2* var(--w));
+       height: calc(100% - 2* var(--w));
+       background-color: var(--bg-color);
+       z-index: -1;
+       left: var(--w);
+       top: var(--w);
+       border-radius: inherit;
+   }
+
 
 .masthead {
   padding-top: var(--spacer);
   padding-bottom: var(--spacer);
   margin-bottom: var(--spacer-3);
   width: calc(100% + var(--spacer-2)* 2);
-  margin-left: calc( -1 * var(--spacer-2));
-  background-color: rgba(217, 76, 76, 0.6);
+  margin-left: calc( -1 * var(--spacer-2)); 
 }
 
 .masthead-title {

@@ -3,7 +3,7 @@ layout: default
 title: 发布列表
 ---
 
-# 以前内容
+# 时光长河
 
 {% assign postsByYearMonth = site.old | group_by_exp: "post", "post.date | date: '%B %Y'" %}
 {% for yearMonth in postsByYearMonth %}

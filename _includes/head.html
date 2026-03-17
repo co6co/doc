@@ -43,4 +43,8 @@
 		href="{{ 'atom.xml' | relative_url }}" />
 
 	{% seo title=false %}
+	<meta name="keywords" content="{{site.keywords}}" />
+	<meta
+		name="description"
+		content="{{ page.excerpt | xml_escape ||site.description}}" />
 </head>

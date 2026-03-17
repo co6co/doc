@@ -21,9 +21,22 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-minifier
 #  - timezone_converter
 #  - multi_posts
-
+# 压缩器配置
+minifier:
+  # 压缩HTML
+  compress_html:
+    clippings: all
+    comments: all
+    endings: all
+    profile: false
+    blanklines: false
+    # 忽略特定文件/路径
+    ignore_files: []
+    # 从压缩中排除的CSS选择器（如包含SVG的标签）
+    exclude_comments: ['svg']
 # Optimize Jekyll
 exclude:
   - .editorconfig

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>公钥加解密</title>
+	</head>
+	<body>
+		<textarea id="key" cols="65" rows="15" placeholder="公钥、私钥"></textarea>
+		<textarea id="content" cols="30" rows="10" placeholder="明文"></textarea>
+		<div>
+			<button id="encryptbtn">Encrypt</button>
+			<button id="decryptbtn">Decrypt</button>
+			<button id="sign">签名</button>
+			<button id="verify">验证[未通过]</button>
+		</div>
+		<textarea id="encontent" cols="30" rows="10" placeholder="密文"></textarea>
+
+		<script src="{{ '/assets/js/jsencrypt.min.js' | relative_url }}"></script>
+
+		<script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
+		<a href="//bitwiseshiftleft.github.io/sjcl/demo/">sjcl demo</a>
+		<script>
+			function textToBinaryUTF8(text) {
+				const encoder = new TextEncoder();
+				const data = encoder.encode(text);
+				return Array.from(data).map((byte) =>
+					byte.toString(16).padStart(8, '0x'),
+				);
+			}
+
+			data = sjcl.encrypt('123456', '你好,世界！');
+			console.info('ase encrypted: ', data);
+			const data_decrypted = sjcl.decrypt('123456', data);
+			console.info('ase decrypted: ', data_decrypted);
+
+			//var aes_key = [0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff, 0xfffffff8];
+
+			const crypt = new JSEncrypt();
+			const privateKey = crypt.getPrivateKey();
+			crypt.setPrivateKey(privateKey);
+			console.info(privateKey);
+			const encryptKey = crypt.encrypt('你好');
+			console.log('encryptKey: ' + encryptKey);
+			const decrypted = crypt.decrypt(encryptKey);
+			console.log('decrypted: ' + decrypted);
+			console.info('公钥', crypt.getPublicKey());
+
+			const privateDencrypt = function (key, content, isPrivateKey) {
+				if (isPrivateKey) {
+					crypt.setPrivateKey(key);
+				} else {
+					console.info('设置了公钥解密');
+					crypt.setPublicKey(key);
+				}
+				return crypt.decrypt(content);
+			};
+			const publicEncrypt = function (key, content, isPrivateKey) {
+				if (isPrivateKey) {
+					crypt.setPrivateKey(key);
+				} else {
+					crypt.setPublicKey(key);
+				}
+				return crypt.encrypt(content);
+			};
+
+			const privateSign = function (key, content) {
+				crypt.setPrivateKey(key);
+				return crypt.sign(content);
+			};
+			const publicVerify = function (key, content, sign) {
+				console.info(key, content, sign);
+				crypt.setPublicKey(key);
+				return crypt.verify(content, sign);
+			};
+			const aseEncrypt = function (key, content) {
+				return sjcl.encrypt(key, content);
+			};
+			const aseDecrypt = function (key, content) {
+				return sjcl.decrypt(key, content);
+			};
+			const getEleValue = (contentId) => {
+				const content = document.getElementById(contentId).value;
+				const key = document.getElementById('key').value.trim();
+				let isPrivateKey = false;
+				if (key.startsWith('-----BEGIN RSA PRIVATE KEY-----')) {
+					isPrivateKey = true;
+				}
+				return [content, key];
+			};
+			document.getElementById('encryptbtn').addEventListener('click', () => {
+				const [content, publicKey, isPrivateKey] = getEleValue('content');
+				document.getElementById('encontent').value = publicEncrypt(
+					publicKey,
+					content,
+					isPrivateKey,
+				);
+			});
+			document.getElementById('decryptbtn').addEventListener('click', () => {
+				const [content, privateKey, isPrivateKey] = getEleValue('encontent');
+				document.getElementById('content').value = privateDencrypt(
+					privateKey,
+					content,
+					isPrivateKey,
+				);
+			});
+
+			document.getElementById('sign').addEventListener('click', () => {
+				const [content, privateKey] = getEleValue('content');
+				document.getElementById('encontent').value = privateSign(
+					privateKey,
+					content,
+				);
+			});
+			document.getElementById('verify').addEventListener('click', () => {
+				const [sign, publicKey] = getEleValue('encontent');
+				const content = document.getElementById('content').value.trim();
+				console.info(publicVerify(publicKey, content, sign));
+			});
+		</script>
+	</body>
+</html>

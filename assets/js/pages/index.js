@@ -3,6 +3,8 @@ document.querySelectorAll('.link0').forEach((el) => {
 		e.preventDefault();
 		const url = el.dataset.url;
 		window.open('/pages/fm.html', '_blank');
-		window.channels.sendMsg({ url: url, title: el.innerText });
+		setTimeout(() => {
+			window.channels.sendMsg({ url: url, title: el.innerText });
+		}, 5000);
 	});
 });

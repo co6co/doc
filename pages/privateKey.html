@@ -1,21 +1,26 @@
 ---
 layout: default
-title: 工具主页
-description: 主页
+title: 非对称密钥加解密
+description: 非对称密钥加解密，
+permalink: privateKey.html
 custom_css:
   - /assets/css/tool-privatekey.css
 custom_js:
   - /assets/js/jsencrypt.min.js
   - /assets/js/pages/aes.js
+date: 2026-03-23 10:15:01
+modify: 2026-03-23 10:15:01
+categories: [安全, RSA]
+tags: [加解密]
 ---
 
-<div class="container">
+<div class="box">
 	<textarea id="key0" cols="65" rows="15" placeholder="私钥"></textarea>
 	<textarea id="key1" cols="65" rows="15" placeholder="公钥"></textarea>
 </div>
-<div class="container">
+<div class="box">
 	<textarea id="content" cols="65" rows="15" placeholder="明文"></textarea>
-	<div class="btn-container">
+	<div class="btn-box">
 		<button id="encryptbtn">Encrypt&gt;&gt;</button>
 		<button id="decryptbtn">Decrypt&lt;&lt;</button>
 		<button id="signbtn">签名</button>

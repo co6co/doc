@@ -1,15 +1,11 @@
-body {
-	margin: 0 auto;
-	text-align: center;
-}
-
-.container {
+.box {
 	display: flex;
 	width: 80%;
-	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
 }
 
-.btn-container {
+.btn-box {
 	margin: auto;
 }
 

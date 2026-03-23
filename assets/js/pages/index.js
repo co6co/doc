@@ -5,6 +5,6 @@ document.querySelectorAll('.link0').forEach((el) => {
 		window.open('/pages/fm.html', '_blank');
 		setTimeout(() => {
 			window.channels.sendMsg({ url: url, title: el.innerText });
-		}, 5000);
+		}, 1000);
 	});
 });

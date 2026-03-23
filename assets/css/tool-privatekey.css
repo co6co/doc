@@ -1,0 +1,18 @@
+body {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.btn-container {
+	margin: auto;
+}
+
+button {
+	margin: 5px;
+}

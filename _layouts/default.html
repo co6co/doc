@@ -49,5 +49,9 @@
 			gtag('config', '{{ site.ga_analytics }}');
 		</script>
 		{% endif %}
+		<!-- 遍历 custom_js 数组 -->
+		{% if page.custom_js%} {%for js in page.custom_js%}
+		<script src="{{ js | relative_url }}"></script>
+		{% endfor %} {% endif %}
 	</body>
 </html>

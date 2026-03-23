@@ -1,165 +1,29 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>公钥加解密</title>
-		<style>
-			body {
-				margin: 0 auto;
-				text-align: center;
-			}
+---
+layout: default
+title: 工具主页
+description: 主页
+custom_css:
+  - /assets/css/tool-privatekey.css
+custom_js:
+  - /assets/js/jsencrypt.min.js
+  - /assets/js/pages/aes.js
+---
 
-			.container {
-				display: flex;
-				width: 80%;
-				margin: 0 auto;
-			}
+<div class="container">
+	<textarea id="key0" cols="65" rows="15" placeholder="私钥"></textarea>
+	<textarea id="key1" cols="65" rows="15" placeholder="公钥"></textarea>
+</div>
+<div class="container">
+	<textarea id="content" cols="65" rows="15" placeholder="明文"></textarea>
+	<div class="btn-container">
+		<button id="encryptbtn">Encrypt&gt;&gt;</button>
+		<button id="decryptbtn">Decrypt&lt;&lt;</button>
+		<button id="signbtn">签名</button>
+		<button id="verifybtn">验证签名</button>
+	</div>
+	<textarea id="encontent" cols="65" rows="15" placeholder="密文"></textarea>
+</div>
 
-			.btn-container {
-				margin: auto;
-			}
-
-			button {
-				margin: 5px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<textarea id="key0" cols="65" rows="15" placeholder="私钥"></textarea>
-			<textarea id="key1" cols="65" rows="15" placeholder="公钥"></textarea>
-		</div>
-		<div class="container">
-			<textarea id="content" cols="65" rows="15" placeholder="明文"></textarea>
-			<div class="btn-container">
-				<button id="encryptbtn">Encrypt&gt;&gt;</button>
-				<button id="decryptbtn">Decrypt&lt;&lt;</button>
-				<button id="signbtn">签名</button>
-				<button id="verifybtn">验证签名</button>
-			</div>
-			<textarea
-				id="encontent"
-				cols="65"
-				rows="15"
-				placeholder="密文"></textarea>
-		</div>
-
-		<script src="/assets/js/jsencrypt.min.js"></script>
-
-		<script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
-		<a href="//bitwiseshiftleft.github.io/sjcl/demo/">sjcl demo</a>
-		<script>
-			function textToBinaryUTF8(text) {
-				const encoder = new TextEncoder();
-				const data = encoder.encode(text);
-				return Array.from(data).map((byte) =>
-					byte.toString(16).padStart(8, '0x'),
-				);
-			}
-
-			// ASE 加密
-			const asePwd = '123456';
-			data = sjcl.encrypt(asePwd, '你好,世界！');
-			console.info('ase encrypted: ', data);
-			const data_decrypted = sjcl.decrypt(asePwd, data);
-			console.info('ase decrypted: ', data_decrypted);
-			// end ASE 加密
-
-			const key0 = document.getElementById('key0');
-			const key1 = document.getElementById('key1');
-
-			const crypt = new JSEncrypt();
-			const privateKey = crypt.getPrivateKey();
-			key0.value = privateKey;
-			key1.value = crypt.getPublicKey();
-			/*
-        crypt.setPrivateKey(privateKey);
-        console.info("私钥", privateKey)
-        const encryptKey = crypt.encrypt("你好");
-        console.log("encryptKey: " + encryptKey);
-        const decrypted = crypt.decrypt(encryptKey);
-        console.log("decrypted: " + decrypted);
-        console.info("公钥", crypt.getPublicKey())
-        */
-
-			const privateDencrypt = function (key, content, isPrivateKey) {
-				crypt.setPrivateKey(key);
-				return crypt.decrypt(content);
-			};
-			const publicEncrypt = function (key, content) {
-				crypt.setPublicKey(key);
-				return crypt.encrypt(content);
-			};
-
-			const privateSign = function (key, content) {
-				crypt.setPrivateKey(key);
-				return crypt.sign(content);
-			};
-			const publicVerify = function (key, content, sign) {
-				console.info(key, content, sign);
-				crypt.setPublicKey(key);
-				return crypt.verify(content, sign);
-			};
-			const aseEncrypt = function (key, content) {
-				return sjcl.encrypt(key, content);
-			};
-			const aseDecrypt = function (key, content) {
-				return sjcl.decrypt(key, content);
-			};
-			const getContent = () => {
-				return document.getElementById('content').value;
-			};
-			const getEnContent = () => {
-				return document.getElementById('encontent').value;
-			};
-			const getKey0 = (contentId) => {
-				const key = key0.value.trim();
-
-				if (!key.startsWith('-----BEGIN RSA PRIVATE KEY-----'))
-					console.warn('不是私钥格式');
-
-				return key;
-			};
-			const getKey1 = (contentId) => {
-				const key = key1.value.trim();
-				let isPrivateKey = false;
-				if (!key.startsWith('-----BEGIN PUBLIC KEY-----')) {
-					console.warn('不是公钥格式');
-				}
-				return key;
-			};
-
-			const encryptBtn = document.getElementById('encryptbtn');
-			const decryptBtn = document.getElementById('decryptbtn');
-			const signBtn = document.getElementById('signbtn');
-			const verifyBtn = document.getElementById('verifybtn');
-
-			contentEle = document.getElementById('content');
-			encontentEle = document.getElementById('encontent');
-
-			encryptBtn.addEventListener('click', () => {
-				const publicKey = getKey1();
-				const content = getContent();
-				encontentEle.value = publicEncrypt(publicKey, content);
-			});
-			decryptBtn.addEventListener('click', () => {
-				const privateKey = getKey0();
-				const content = getEnContent();
-				contentEle.value = privateDencrypt(privateKey, content);
-			});
-
-			signBtn.addEventListener('click', () => {
-				const privateKey = getKey0();
-				const content = getContent();
-				encontentEle.value = privateSign(privateKey, content);
-			});
-			verifyBtn.addEventListener('click', () => {
-				const publicKey = getKey1();
-				const content = getContent();
-				const sign = getEnContent();
-				alert('验证结果：' + publicVerify(publicKey, content, sign));
-			});
-		</script>
-	</body>
-</html>
+<script src="https://bitwiseshiftleft.github.io/sjcl/sjcl.js"></script>
+<a href="//bitwiseshiftleft.github.io/sjcl/demo/">sjcl demo</a>
+<script></script>

@@ -8,8 +8,8 @@ window.channels = (function () {
 	};
 	const reciveMsg = (callback) => {
 		channel.onmessage = (e) => {
-			const data = JSON.stringify(e.data);
-			callback(data);
+			//const data = JSON.stringify(e.data);
+			callback(e.data);
 		};
 	};
 	return { sendMsg, reciveMsg };

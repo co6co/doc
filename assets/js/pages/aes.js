@@ -10,6 +10,7 @@
 	console.info('ase encrypted: ', data);
 	const data_decrypted = sjcl.decrypt(asePwd, data);
 	console.info('ase decrypted: ', data_decrypted);
+
 	// end ASE 加密
 
 	const key0 = document.getElementById('key0');

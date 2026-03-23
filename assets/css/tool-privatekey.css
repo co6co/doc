@@ -2,11 +2,11 @@
 	display: flex;
 	width: 80%;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	margin: auto;
 }
 
 .btn-box {
-	margin: auto;
 }
 
 button {

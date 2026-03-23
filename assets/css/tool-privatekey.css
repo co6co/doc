@@ -3,12 +3,17 @@
 	width: 80%;
 	align-items: center;
 	justify-content: space-between;
-	margin: auto;
+	margin: 15px auto;
 }
 
 .btn-box {
+	display: flex;
+	flex-direction: column;
 }
 
 button {
 	margin: 5px;
+	border-radius: 16px;
+	border-width: 1px;
+	border-style: dotted;
 }

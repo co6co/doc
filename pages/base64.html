@@ -1,19 +1,69 @@
 ---
-layout: tool
+layout: default
 title: base64工具
-description: 加解密
+description: base64编码解码工具
+permalink: /pages/base64.html
 custom_css:
-	- /assets/css/base64.css
+  - /assets/css/tool-index.css
 custom_js:
-	- /assets/js/base64.js
+  - /assets/js/base64.min.js
+date: 2026-03-27 10:15:01
+modify: 2026-03-27 10:15:01
+categories: [安全, base64]
+tags: [加解密]
 ---
 
-<div>
-	<h2>Base64 编码/解码</h2>
-	<textarea name="source" placeholder="" class="layui-textarea"></textarea>
-	<select lay-filter="demo-select-filter">
-		<option value="UTF-8">UTF-8</option>
-	</select>
-	<button class="layui-btn" lay-submit lay-filter="demo2">确认</button>
-	<textarea name="target" placeholder="" class="layui-textarea"></textarea>
+<div class="box">
+	<textarea id="content" cols="65" rows="15" placeholder="明文"></textarea>
+	<div class="btn-box">
+		<select id="type">
+			<option value="0">Base64 ASCII</option>
+			<option value="1">Base64</option>
+			<!--<option value="uri">URI</option>
+                <option value="url">URL</option>-->
+		</select>
+		<button id="encryptbtn">Encrypt&gt;&gt;</button>
+		<button id="decryptbtn">Decrypt&lt;&lt;</button>
+	</div>
+	<textarea id="encontent" cols="65" rows="15" placeholder="密文"></textarea>
 </div>
+<script>
+	const encryptBtn = document.getElementById('encryptbtn');
+	const decryptBtn = document.getElementById('decryptbtn');
+	const contentEle = document.getElementById('content');
+	const encontentEle = document.getElementById('encontent');
+	const typeEle = document.getElementById('type');
+	const encode = function (content) {
+		const type = typeEle.value;
+		if (type == '0') {
+			return Base64.btoa(content);
+		} else if (type == '1') {
+			return Base64.encode(content);
+		} else if (type == 'uri') {
+			return Base64.encodeURI(content);
+		} else if (type == 'url') {
+			return Base64.encodeURL(content);
+		}
+	};
+	const decode = function (content) {
+		const type = typeEle.value;
+		if (type == '0') {
+			return Base64.decode(content);
+		} else if (type == '1') {
+			return Base64.decode(content);
+		} else if (type == 'uri') {
+			// return Base64.toUint8Array(content);
+			return Base64.decode(content);
+		} else if (type == 'url') {
+			return Base64.decode(content);
+		}
+	};
+	encryptBtn.addEventListener('click', () => {
+		const content = contentEle.value;
+		encontentEle.value = encode(content);
+	});
+	decryptBtn.addEventListener('click', () => {
+		const content = encontentEle.value;
+		contentEle.value = decode(content);
+	});
+</script>

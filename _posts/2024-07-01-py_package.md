@@ -46,6 +46,9 @@ conda env list
 conda activate env_name
 conda deactivate
 
+ 
+conda install python=3.12 # 升级python 但需要安装所有已安装的包
+
 conda list # 包管理
 ```
 ### 2.1 查看Python 所在路径

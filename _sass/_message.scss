@@ -10,3 +10,28 @@
   background-color:var(--message-bg);
   border-radius: var(--border-radius);
 }
+
+
+.author-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  background: #f9f9f9;
+  margin: 20px 0;
+}
+.author-story {
+  flex: 1;
+  margin-right: 20px;
+}
+.author-sponsor {
+  text-align: center;
+}
+.sponsor-qr {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

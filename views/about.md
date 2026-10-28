@@ -5,7 +5,7 @@ title: AboutMe
 
 <section class="author-card">
   <div class="author-story">
-    <h3>🧑‍💻 关于这个博客后的me</h3>
+    <h3>🧑‍💻 关于这个博客后的我</h3>
     <p>
       我是一个习惯在深夜和代码谈恋爱的程序员。现实中的身份？早就被我封装成了一个 <code>private</code> 变量，权限不足，拒绝访问——所以这里选择 <strong>保密</strong>。
     </p>
@@ -22,6 +22,6 @@ title: AboutMe
     <div class="qr-code-wrapper">  
     <img src="{{site.baseurl}}/static/imgs/home/zw.jpg" alt="请请作者{{site.author.name}}喝杯咖啡"   class="sponsor-qr" />
     </div>
-    <p class="sponsor-tip">扫码支持，你的鼓励是我持续更新的 Release 动力😴</p>
+    <p class="sponsor-tip">扫码支持，你的鼓励是我持续更新的 Release 动力😴</p> 
   </div>
 </section>

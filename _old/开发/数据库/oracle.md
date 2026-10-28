@@ -22,9 +22,6 @@ SQL> alter database mount;
 SQL> alter database open;
 SQL> startup
 
-
-
-
 # 其他
 
 SQL> shutdown immedate;

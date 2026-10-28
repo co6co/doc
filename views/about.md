@@ -19,8 +19,8 @@ title: AboutMe
   
   <div class="author-sponsor">
     <p class="sponsor-title">☕ 请我喝杯咖啡,让牛马们一战到天明！😴</p>
-    <div class="qr-code-wrapper"> 
-      ![请请作者{{site.author.name}}喝杯咖啡]({{ "/static/imgs/home/zw.jpg" | prepend: site.baseurl }})
+    <div class="qr-code-wrapper">  
+    <img src="{{site.baseurl}}/static/imgs/home/zw.jpg" alt="请请作者{{site.author.name}}喝杯咖啡"   class="sponsor-qr" />
     </div>
     <p class="sponsor-tip">扫码支持，你的鼓励是我持续更新的 Release 动力😴</p>
   </div>

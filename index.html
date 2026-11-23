@@ -1,43 +1,108 @@
 ---
 layout: default
 title: Home
-previous_text: 后退
-next_text: 前进
+previous_text: 下一页
+next_text: 上一页
 ---
 
-<div class="home">
-	<h1>文章列表</h1>
-	<ul class="post-list">
-		{% for post in paginator.posts %}
-		<li>
-			<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+{% assign all_posts = site.posts | concat: site.aq | concat: site.old %}
+{% assign total_posts = all_posts | size %}
+{% assign all_categories = all_posts | map: 'categories' | uniq | compact | sort %}
+{% assign total_tags = all_posts | map: 'tags' | uniq | compact | size %}
 
-			<h2>
-				<a class="post-title" href="{{ post.url | relative_url }}"
-					>{{ post.title }}</a
-				>
-			</h2>
-			<div class="post-excerpt">{{ post.excerpt }}</div>
-		</li>
-		{% endfor %}
-	</ul>
-</div>
-<div class="pagination">
-	{% if paginator.next_page %}
-	<a
-		class="pagination-item older"
-		href="{{ paginator.next_page_path | relative_url }}"
-		>{{page.previous_text}}</a
-	>
-	{% else %}
-	<span class="pagination-item older">{{page.previous_text}}</span>
-	{% endif %} {% if paginator.previous_page %}
-	<a
-		class="pagination-item newer"
-		href="{{ paginator.previous_page_path | prepend: relative_url }}"
-		>{{page.next_text}}</a
-	>
-	{% else %}
-	<span class="pagination-item newer">{{page.next_text}}</span>
-	{% endif %}
-</div>
+<!-- ==================== Hero ==================== -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">NOTEBOOK · EST. 2023</p>
+    <h1 class="hero-title">{{ site.title }}</h1>
+    <p class="hero-desc">{{ site.description }}</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">{{ total_posts }}</span>
+        <span class="stat-label">篇笔记</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">{{ all_categories.size }}</span>
+        <span class="stat-label">个分类</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">{{ total_tags }}</span>
+        <span class="stat-label">个标签</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== Categories ==================== -->
+<section class="home-section">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2 class="section-title">分类浏览</h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="cat-grid">
+    {% for cat in all_categories %}
+      {% assign cat_posts = all_posts | where_exp: "p", "p.categories contains cat" %}
+      {% if cat_posts.size > 0 %}
+        <a class="cat-card" href="{{ '/views/categories' | relative_url }}">
+          <span class="cat-name">{{ cat }}</span>
+          <span class="cat-count">{{ cat_posts.size }}<small>篇</small></span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ==================== Latest Posts (Timeline) ==================== -->
+<section class="home-section">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2 class="section-title">最新笔记</h2>
+    <span class="section-line"></span>
+  </div>
+  <ul class="timeline">
+    {% for post in paginator.posts %}
+      {% assign post_month = post.date | date: "%Y-%m" %}
+      {% assign prev_month = forloop.previous.date | date: "%Y-%m" %}
+      {% if post_month != prev_month or forloop.first %}
+        <li class="tl-month">{{ post.date | date: "%Y年 %m月" }}</li>
+      {% endif %}
+      <li class="tl-item">
+        <span class="tl-dot"></span>
+        <time class="tl-date">{{ post.date | date: "%d日" }}</time>
+        <div class="tl-body">
+          <h3 class="tl-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="tl-excerpt">{{ post.excerpt | strip_html | truncate: 100, '…' }}</p>
+          {% if post.categories %}
+          <div class="tl-meta">
+            {% for c in post.categories limit:2 %}<span class="tl-tag">{{ c }}</span>{% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<!-- ==================== Pagination ==================== -->
+<nav class="pagination" aria-label="Pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">
+      <span class="pg-label">{{page.previous_text}}</span>
+      <span class="pg-num">{{ paginator.next_page_number }} / {{ paginator.total_pages }}</span>
+    </a>
+  {% else %}
+    <span class="pagination-item older disabled">{{page.previous_text}}</span>
+  {% endif %}
+
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: relative_url }}">
+      <span class="pg-label">{{page.next_text}}</span>
+      <span class="pg-num">{{ paginator.previous_page_number }} / {{ paginator.total_pages }}</span>
+    </a>
+  {% else %}
+    <span class="pagination-item newer disabled">{{page.next_text}}</span>
+  {% endif %}
+</nav>

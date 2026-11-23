@@ -1,107 +1,112 @@
-// Masthead
-//
-// Super small header above the content for site name and short description.
-/*btn 边框*/
-
-   .borderRotate {
-       --bg-color:rgba(217, 76, 76, 0.5);
-       --border-color: hsl(250, 84%, 42%);  
-       background-color: var(--bg-color);
-       border: none;
-       outline: none;
-       z-index: 1;
-       border-radius: 10px;
-       cursor: pointer;
-       /*outline: 4px solid #fff;*/
-       position: relative;
-       overflow: hidden;
-   }
- .borderRotate::before {
-       content: '';
-       position: absolute;
-       width: 200%;
-       height: 200%;
-       background-color: var(--border-color);
-       z-index: -2;
-       left: 50%;
-       top: 50%;
-       transform-origin: left top;
-       animation: borderRotate 2s linear infinite;
-   }
-
-   @keyframes borderRotate {
-       to {
-           transform: rotate(1turn);
-       }
-   }
-
-   .borderRotate::after {
-       content: '';
-       position: absolute;
-       --w: 4px;
-       width: calc(100% - 2* var(--w));
-       height: calc(100% - 2* var(--w));
-       background-color: var(--bg-color);
-      
-       z-index: -1;
-       left: var(--w);
-       top: var(--w);
-       border-radius: inherit;
-   }
-
+// ============================================
+// 导航栏 - 黑白灰极简风格
+// ============================================
 
 .masthead {
-  padding-top: var(--spacer);
-  padding-bottom: var(--spacer);
+  padding-top: var(--spacer-2);
+  padding-bottom: var(--spacer-2);
   margin-bottom: var(--spacer-3);
-  width: calc(100% + var(--spacer-2)* 2);
-  margin-left: calc( -1 * var(--spacer-2));  
-  background-color:  rgba(217, 76, 76, 0.65);
+  margin-left: calc(-1 * var(--spacer-2));
+  margin-right: calc(-1 * var(--spacer-2));
+  padding-left: var(--spacer-2);
+  padding-right: var(--spacer-2);
+  background-color: var(--masthead-bg);
+  color: var(--masthead-color);
+  border-bottom: 3px solid var(--accent);
+  transition: background-color var(--transition-normal);
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    margin-left: calc(-1 * var(--spacer));
+    margin-right: calc(-1 * var(--spacer));
+    padding-left: var(--spacer);
+    padding-right: var(--spacer);
+  }
 }
 
 .masthead-title {
-  margin-bottom: 0;  
-  .left{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--spacer);
+  margin-bottom: 0;
+
+  .left {
     a {
-        color: inherit;
-        text-decoration: none;
-        font-size: 2.2em;
+      color: var(--masthead-color);
+      text-decoration: none;
+      font-size: 1.6em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      border-bottom: none;
+
+      &:hover {
+        color: var(--gray-000);
       }
-      .subTitle{
-        opacity: 0.3;
-        font-size: 70%;
-        font-weight: 400;
+    }
+
+    .subTitle {
+      display: block;
+      margin-top: 0.25rem;
+      opacity: 0.6;
+      font-size: 0.75em;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.02em;
+
+      small {
+        margin-left: 0.5rem;
+        opacity: 0.5;
       }
+    }
   }
-  
-    // Navbar styles
+
+  // 导航菜单
   .nav {
-    float: right;
-    line-height: 1.25rem;
-    word-spacing: 1rem;
-    font-size:1.4rem;
-    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    font-size: 0.95em;
+
     small {
-      font-weight: 400;  
+      font-weight: 400;
     }
-    a{
-        background: linear-gradient(to right, var(--yellow), #567291) no-repeat;
-        background-size: 0 1px;
-        background-position: right bottom;
-        transition: background-size 0.3s;
-        text-decoration: none; 
+
+    a {
+      color: var(--masthead-link);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      margin: 0 0.15rem;
+      border-radius: var(--border-radius-sm);
+      border-bottom: none;
+      font-size: 0.9em;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color var(--transition-fast), background-color var(--transition-fast);
+
+      &:hover {
+        color: var(--masthead-link-hover);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
     }
-    a:hover{
-      background-position: left bottom;
-      background-size: 100% 2px; 
-      color: var(--yellow);
-    } 
-  }
-  
-  &::after{
-    display: table;
-    content: '';
-    clear: both;
   }
 }
 
+@media (max-width: 600px) {
+  .masthead-title {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav {
+      width: 100%;
+      gap: 0.25rem;
+
+      a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

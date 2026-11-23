@@ -1,19 +1,37 @@
-// Layout
-//
-// Styles for managing the structural hierarchy of the site.
+// ============================================
+// 布局样式
+// ============================================
 
 .container {
-  max-width: 90%;
+  max-width: 960px;
   padding-left: var(--spacer-2);
   padding-right: var(--spacer-2);
-  margin-left:  auto;
+  margin-left: auto;
   margin-right: auto;
-  background-color:  var(--container-bg); 
+  background-color: var(--container-bg);
+  min-height: 100vh;
+  border-left: 1px solid var(--container-border);
+  border-right: 1px solid var(--container-border);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
 }
 
-footer {
+// 响应式
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: var(--spacer);
+    padding-right: var(--spacer);
+    border: none;
+  }
+}
+
+// 页脚
+.footer {
   text-align: center;
-  color: var(--gray-800);
+  color: var(--text-muted);
   margin-top: var(--spacer-3);
   margin-bottom: var(--spacer-3);
+  padding-top: var(--spacer-2);
+  border-top: 1px solid var(--border-color);
+  font-size: 85%;
 }

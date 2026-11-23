@@ -1,79 +1,120 @@
+// ============================================
+// 黑白灰极简主题 - Monochrome Theme
+// ============================================
+
 :root {
-  --gray-000: #f8f9fa;
-  --gray-100: #f1f3f5;
-  --gray-200: #e9ecef;
-  --gray-300: #dee2e6;
-  --gray-400: #ced4da;
-  --gray-500: #adb5bd;
-  --gray-600: #868e96;
-  --gray-700: #495057;
-  --gray-800: #343a40;
-  --gray-900: #212529;
-  --dark-poole-001: hsl(200, 3%, 12%);
-  --dark-poole-002: hsl(0, 0%, 85%);
-  --dark-poole-link-color: rgba(255, 255, 255, 0.75);
-  --dark-poole-link-hover: #fff;
+  // 灰度阶梯 (从白到黑)
+  --gray-000: #ffffff;
+  --gray-050: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-150: #eeeeee;
+  --gray-200: #e0e0e0;
+  --gray-250: #d4d4d4;
+  --gray-300: #cccccc;
+  --gray-350: #b3b3b3;
+  --gray-400: #999999;
+  --gray-450: #808080;
+  --gray-500: #666666;
+  --gray-550: #555555;
+  --gray-600: #4d4d4d;
+  --gray-650: #404040;
+  --gray-700: #333333;
+  --gray-750: #2a2a2a;
+  --gray-800: #1f1f1f;
+  --gray-850: #171717;
+  --gray-900: #0d0d0d;
+  --gray-950: #050505;
 
-  --red: #fa5252;
-  --pink: #e64980;
-  --grape: #be4bdb;
-  --purple: #7950f2;
-  --indigo: #4c6ef5;
-  --blue: #228be6;
-  --cyan: #15aabf;
-  --teal: #12b886;
-  --green: #40c057;
-  --yellow: #fab005;
-  --orange: #fd7e14;
+  // 语义变量 - 亮色模式
+  --body-bg: var(--gray-100);
+  --body-color: var(--gray-800);
+  --container-bg: var(--gray-000);
+  --container-border: var(--gray-200);
 
-  --blue-300: #74c0fc;
-  --blue-400: #4dabf7;
-  --yellow-100: #fff3bf;
+  --heading-color: var(--gray-900);
+  --link-color: var(--gray-700);
+  --link-hover-color: var(--gray-900);
+  --link-underline: var(--gray-400);
 
-  --body-font: "宋体";
-  --body-font-size: 20px;
-  --body-line-height: 1.5;
-  --body-color: var(--gray-900);
-  --body-bg: rgba( var(--gray-100),0.8); 
-  --message-bg: rgba( 250, 176, 5,0.4); 
+  --text-muted: var(--gray-500);
+  --border-color: var(--gray-200);
+  --border-color-dark: var(--gray-400);
 
-  --container-bg:rgba(255,255,255,0.8);
-  --link-color: var(--gray-900);
-  --link-hover-color: #1c7ed6; 
-  --heading-color: var(--gray-900); 
-  --border-color: var(--gray-300);
-  --border-radius: 0.25rem;
+  --accent: var(--gray-900);
+  --accent-hover: var(--gray-700);
 
+  --card-bg: var(--gray-000);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06);
+
+  // 导航栏
+  --masthead-bg: var(--gray-900);
+  --masthead-color: var(--gray-100);
+  --masthead-link: var(--gray-300);
+  --masthead-link-hover: var(--gray-000);
+
+  // 代码
   --code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --code-color: var(--grape);
-  --code-bg:rgba(111,111,111,0.2);  
+  --code-color: var(--gray-700);
+  --code-bg: var(--gray-150);
+  --code-block-bg: var(--gray-850);
+  --code-block-color: var(--gray-200);
 
+  // 字体
+  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --body-font-size: 16px;
+  --body-line-height: 1.7;
+
+  // 圆角
+  --border-radius: 6px;
+  --border-radius-sm: 4px;
+  --border-radius-lg: 10px;
+
+  // 间距
   --spacer: 1rem;
-  --spacer-2: calc(var(--spacer) * 1.5);
-  --spacer-3: calc(var(--spacer) * 3); 
-  --opacity:0.8
+  --spacer-2: 1.5rem;
+  --spacer-3: 3rem;
+
+  // 过渡
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
 }
 
+// 暗色模式
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-color: var(--gray-300);
-    --body-bg: var(--gray-800); 
-    --heading-color: #fff; 
-    --link-color: var(--blue-300);
-    --link-hover-color: var(--blue-400); 
-    --border-color: rgba(255, 255, 255, 0.15); 
-    --code-bg: var(--gray-900);
-  }
-}
+    --body-bg: var(--gray-900);
+    --body-color: var(--gray-200);
+    --container-bg: var(--gray-850);
+    --container-border: var(--gray-700);
 
-// Dark Poole theme
-[data-theme="dark-poole"] {
-  --body-color: var(--dark-poole-002);
-  --body-bg: var(--dark-poole-001);
-  --heading-color: var(--dark-poole-002);
-  --link-color: var(--dark-poole-link-color);
-  --link-hover-color: var(--dark-poole-link-hover);
-  --border-color: rgba(255, 255, 255, 0.15);
-  --code-bg: var(--gray-900);
+    --heading-color: var(--gray-050);
+    --link-color: var(--gray-300);
+    --link-hover-color: var(--gray-100);
+    --link-underline: var(--gray-500);
+
+    --text-muted: var(--gray-500);
+    --border-color: var(--gray-700);
+    --border-color-dark: var(--gray-500);
+
+    --accent: var(--gray-100);
+    --accent-hover: var(--gray-300);
+
+    --card-bg: var(--gray-800);
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    --masthead-bg: var(--gray-950);
+    --masthead-color: var(--gray-100);
+    --masthead-link: var(--gray-400);
+    --masthead-link-hover: var(--gray-000);
+
+    --code-color: var(--gray-200);
+    --code-bg: var(--gray-750);
+    --code-block-bg: var(--gray-950);
+    --code-block-color: var(--gray-200);
+  }
 }

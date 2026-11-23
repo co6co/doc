@@ -1,36 +1,60 @@
-// Messages
-//
-// Show alert messages to users. You may add it to single elements like a `<p>`,
-// or to a parent if there are multiple elements to show.
+// ============================================
+// 提示消息卡片
+// ============================================
 
 .message {
-  padding: var(--spacer);
-  margin-bottom: var(--spacer);
-  color: var(--gray-900);
-  background-color:var(--message-bg);
-  border-radius: var(--border-radius);
+  padding: var(--spacer-2);
+  margin-bottom: var(--spacer-2);
+  color: var(--heading-color);
+  background-color: var(--gray-150);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--border-radius-sm);
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
+@media (prefers-color-scheme: dark) {
+  .message {
+    background-color: var(--gray-750);
+  }
+}
 
+// 作者卡片
 .author-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border: 1px solid #e1e4e8;
-  border-radius: 8px;
-  background: #f9f9f9;
-  margin: 20px 0;
+  padding: var(--spacer-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--gray-050);
+  margin: var(--spacer-2) 0;
 }
+
 .author-story {
   flex: 1;
-  margin-right: 20px;
+  margin-right: var(--spacer-2);
 }
+
 .author-sponsor {
   text-align: center;
 }
+
 .sponsor-qr {
-  width: 466px;
-  border: 1px solid #181717;
-  border-radius: 4px;
+  width: 150px;
+  border: 1px solid var(--border-color-dark);
+  border-radius: var(--border-radius-sm);
+}
+
+@media (max-width: 600px) {
+  .author-card {
+    flex-direction: column;
+  }
+
+  .author-story {
+    margin-right: 0;
+    margin-bottom: var(--spacer);
+  }
 }

@@ -1,29 +1,20 @@
-// Body resets
-//
-// Update the foundational and global aspects of the page.
+// ============================================
+// 基础重置与全局样式
+// ============================================
 
 * {
   box-sizing: border-box;
-} 
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  /* 设置背景图片的URL，此处为示例，请替换为您的图片地址 */
-  background-image: url('https://picsum.photos/1920/1080');
-
-  /* 关键：让背景图覆盖整个区域，并保持比例 */
-  background-size: cover;
-
-  /* 关键：固定背景，不随内容滚动 */
-  background-attachment: fixed;
-
-  /* 将背景图定位在中心 */
-  background-position: center; 
-  /* 可选：防止背景图重复（在cover模式下通常不需要，但更稳妥） */
-  background-repeat: no-repeat;
-
-  /* 确保body元素本身占据整个视口高度 */
   min-height: 100vh;
   margin: 0;
-  
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   line-height: var(--body-line-height);
@@ -31,16 +22,20 @@ body {
   background-color: var(--body-bg);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-// No `:visited` state is required by default (browsers will use `a`)
+// 链接
 a {
   color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
 
-  // `:focus` is linked to `:hover` for basic accessibility
   &:hover,
   &:focus {
     color: var(--link-hover-color);
+    border-bottom-color: var(--link-underline);
   }
 
   strong {
@@ -48,43 +43,67 @@ a {
   }
 }
 
+// 图片
 img {
   display: block;
   max-width: 100%;
+  height: auto;
   margin-bottom: var(--spacer);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-sm);
+  filter: grayscale(0%); // 默认彩色，保持原图
 }
 
+// 表格
 table {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacer);
   width: 100%;
-  border: 0 solid var(--border-color);
+  border: 0;
   border-collapse: collapse;
+  font-size: 95%;
 }
 
 td,
 th {
-  padding: .25rem .5rem;
+  padding: 0.5rem 0.75rem;
   border-color: inherit;
   border-style: solid;
   border-width: 0;
   border-bottom-width: 1px;
-}
-
-th {
+  border-bottom-color: var(--border-color);
   text-align: left;
 }
 
+th {
+  font-weight: 600;
+  background-color: var(--gray-150);
+}
+
+@media (prefers-color-scheme: dark) {
+  th {
+    background-color: var(--gray-750);
+  }
+}
+
 thead th {
-  border-bottom-color: currentColor;
+  border-bottom-color: var(--border-color-dark);
 }
 
+// 高亮标记
 mark {
-  padding: .15rem;
-  background-color: var(--yellow-100);
-  border-radius: .125rem;
+  padding: 0.15rem 0.35rem;
+  background-color: var(--gray-300);
+  color: var(--gray-900);
+  border-radius: var(--border-radius-sm);
 }
 
+@media (prefers-color-scheme: dark) {
+  mark {
+    background-color: var(--gray-600);
+    color: var(--gray-100);
+  }
+}
+
+// 工具类
 .clearfix::after {
   content: "";
   display: table;

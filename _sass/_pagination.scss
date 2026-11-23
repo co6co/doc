@@ -1,52 +1,39 @@
-// Pagination
-//
-// Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
-// there are no more previous or next posts to show.
+// ============================================
+// 分页样式
+// ============================================
 
 .pagination {
   display: flex;
-  margin: 0 -1.5rem var(--spacer);
-  color: grey;
-  text-align: center;
+  gap: var(--spacer);
+  margin: var(--spacer-3) 0 var(--spacer);
 }
 
-// Pagination items can be `span`s or `a`s
 .pagination-item {
-  display: block;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--spacer);
   text-decoration: none;
-  border: solid var(--border-color);
-  border-width: 1px 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  cursor: pointer;
 
-  &:first-child {
-    margin-bottom: -1px;
+  &:hover {
+    color: var(--masthead-color);
+    background-color: var(--masthead-bg);
+    border-color: var(--masthead-bg);
   }
 }
 
-// Only provide a hover state for linked pagination items
-a.pagination-item:hover {
-  background-color: var(--border-color);
-}
-
-@media (min-width: 30em) {
+@media (max-width: 30em) {
   .pagination {
-    margin: var(--spacer-3) 0;
-  }
-
-  .pagination-item {
-    float: left;
-    width: 50%;
-    border-width: 1px;
-
-    &:first-child {
-      margin-bottom: 0;
-      border-top-left-radius: var(--border-radius);
-      border-bottom-left-radius: var(--border-radius);
-    }
-    &:last-child {
-      margin-left: -1px;
-      border-top-right-radius: var(--border-radius);
-      border-bottom-right-radius: var(--border-radius);
-    }
+    flex-direction: column;
   }
 }

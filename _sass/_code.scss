@@ -1,7 +1,6 @@
-// Code
-//
-// Inline and block-level code snippets. Includes tweaks to syntax highlighted
-// snippets from Pygments/Rouge and Gist embeds.
+// ============================================
+// 代码块样式 - 黑白灰风格
+// ============================================
 
 code,
 pre {
@@ -10,26 +9,44 @@ pre {
 
 code {
   font-size: 85%;
+  padding: 0.15rem 0.4rem;
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  border-radius: var(--border-radius-sm);
 }
 
 pre {
   display: block;
   margin-top: 0;
-  margin-bottom: var(--spacer-3);
+  margin-bottom: var(--spacer-2);
   overflow: auto;
+  padding: var(--spacer);
+  background-color: var(--code-block-bg);
+  color: var(--code-block-color);
+  border-radius: var(--border-radius);
+  font-size: 85%;
+  line-height: 1.6;
+
+  code {
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    border-radius: 0;
+    font-size: 100%;
+  }
 }
 
 .highlight {
-  padding: var(--spacer);
-  margin-bottom: var(--spacer);
-  background-color: var(--code-bg); 
-  border-radius: var(--border-radius); 
+  padding: 0;
+  margin-bottom: var(--spacer-2);
+  background-color: var(--code-block-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
 
   pre {
     margin-bottom: 0;
   }
 
-  // Triple backticks (code fencing) doubles the .highlight elements
   .highlight {
     padding: 0;
   }
@@ -48,7 +65,11 @@ pre {
   .gutter {
     vertical-align: top;
     user-select: none;
-    opacity: .25;
+    opacity: 0.3;
+    padding-right: var(--spacer);
+    border-right: 1px solid var(--gray-600);
+    background-color: var(--gray-800);
+    color: var(--gray-400);
   }
 }
 
